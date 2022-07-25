@@ -1,5 +1,5 @@
 // Helper functions to generate HTML template
-function generateTemplate() {
+function generateTemplate(managerCard, engineerCard, internCard) {
     let htmlTemplate = `
     <!DOCTYPE html>
     <html lang="en">
@@ -34,63 +34,11 @@ function generateTemplate() {
             <div class="container-fluid d-flex flex-column flex-sm-column flex-md-row flex-lg-row align-items-center justify-content-center justify-content-md-around justify-content-lg-around"
                 id="card-container">
                 <!--Manager card-->
-                <div class="card" style="width: 20rem;">
-                    <div class="card-header managerHeader">
-                        <h2 class="card-title">Manager</h2>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group card-list">
-                            <li class="list-group-item card-list-item"><span class="itemTitle">Name:</span> Felix Cagatin
-                            </li>
-                            <li class="list-group-item card-list-item"><span class="itemTitle">ID Number:</span> 02123
-                            </li>
-                            <li class="list-group-item card-list-item"><span class="itemTitle">Email:</span> <a
-                                    href="mailto:EMAIL GOES HERE">Email@email.com</a>
-                            </li>
-                            <li class="list-group-item card-list-item"><span class="itemTitle">Office Number:</span> 21
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                ${managerCard}
                 <!-- Engineer Card -->
-                <div class="card engineerCard" style="width: 20rem;">
-                    <div class="card-header engineerHeader">
-                        <h2 class="card-title">Engineer</h2>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group card-list">
-                            <li class="list-group-item card-list-item"><span class="itemTitle">Name:</span> Felix Cagatin
-                            </li>
-                            <li class="list-group-item card-list-item"><span class="itemTitle">ID Number:</span> 02123
-                            </li>
-                            <li class="list-group-item card-list-item"><span class="itemTitle">Email:</span> <a
-                                    href="mailto:EMAIL GOES HERE">Email@email.com</a>
-                            </li>
-                            <li class="list-group-item card-list-item"><span class="itemTitle">Github Account:</span> <a
-                                    href="#">Github User</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                ${engineerCard}
                 <!-- Intern Card -->
-                <div class="card" style="width: 20rem;">
-                    <div class="card-header internHeader">
-                        <h2 class="card-title">Intern</h2>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group card-list">
-                            <li class="list-group-item card-list-item"><span class="itemTitle">Name:</span> Felix Cagatin
-                            </li>
-                            <li class="list-group-item card-list-item"><span class="itemTitle">ID Number:</span> 02123
-                            </li>
-                            <li class="list-group-item card-list-item"><span class="itemTitle">Email:</span> <a
-                                    href="mailto:EMAIL GOES HERE">Email@email.com</a>
-                            </li>
-                            <li class="list-group-item card-list-item"><span class="itemTitle">School:</span> UCSD
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                ${internCard}
             </div>
         </main>
     
