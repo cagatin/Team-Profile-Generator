@@ -110,34 +110,4 @@ function generateTemplate() {
     `
 }
 
-// helper function to generate Intern card 
-function generateInternCard(intern) {
-    const name = intern.internName;
-    const id = intern.internId;
-    const email = intern.internEmail;
-    const school = intern.internSchool;
-
-    let internCard = `
-    <div class="card" style="width: 20rem;">
-        <div class="card-header internHeader">
-            <h2 class="card-title">Intern</h2>
-        </div>
-        <div class="card-body">
-            <ul class="list-group card-list">
-                <li class="list-group-item card-list-item"><span class="itemTitle">Name:</span> Felix Cagatin
-                </li>
-                <li class="list-group-item card-list-item"><span class="itemTitle">ID Number:</span> 02123
-                </li>
-                <li class="list-group-item card-list-item"><span class="itemTitle">Email:</span> <a
-                        href="mailto:EMAIL GOES HERE">Email@email.com</a>
-                </li>
-                <li class="list-group-item card-list-item"><span class="itemTitle">School:</span> UCSD
-                </li>
-            </ul>
-        </div>
-    </div>
-    `;
-    return internCard;
-}
-
 module.exports = generateTemplate;
