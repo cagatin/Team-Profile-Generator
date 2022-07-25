@@ -19,25 +19,25 @@ const managerQuestions = [
     {
         type: "input",
         message: "What is the name of the manager?",
-        name: "managerName"
+        name: "name"
     },
     // Employee ID of the manager
     {
         type: "input",
         message: "What is the employee ID of the manager?",
-        name: "managerID"
+        name: "id"
     },
     // Email address of the manager
     {
         type: "input",
         message: "What is manager's Email?",
-        name: "managerEmail"
+        name: "email"
     },
     // Office number of the manager
     {
         type: "input",
         message: "What Office Number is the manager in charge of?",
-        name: "managerOfficeNum"
+        name: "officeNum"
     }
 ];
 
@@ -47,25 +47,25 @@ const engineerQuestions = [
     {
         type: "input",
         message: "What is the name of the Engineer?",
-        name: "engineerName"
+        name: "name"
     },
     // Employee ID of the Engineer
     {
         type: "input",
         message: "What is the employee ID of the Engineer?",
-        name: "engineerID"
+        name: "id"
     },
     // Email address of the manager
     {
         type: "input",
         message: "What is Engineer's Email?",
-        name: "engineerEmail"
+        name: "email"
     },
     // Github profile of the engineer
     {
         type: "input",
         message: "What is the Engineer's GITHUB username?",
-        name: "engineerGithub"
+        name: "github"
     }
 ];
 
@@ -75,27 +75,37 @@ const internQuestions = [
     {
         type: "input",
         message: "What is the name of the Intern?",
-        name: "internName"
+        name: "name"
     },
     // Employee ID of the Intern
     {
         type: "input",
         message: "What is the employee ID of the Intern?",
-        name: "internID"
+        name: "id"
     },
     // Email address of the Intern
     {
         type: "input",
         message: "What is Intern's Email?",
-        name: "internEmail"
+        name: "email"
     },
     // School of the intern
     {
         type: "input",
         message: "What school is the Intern currently attending?",
-        name: "internSchool"
+        name: "school"
     }
 ];
+
+// Array to add team members
+const addQuestion = [
+    {
+        type: 'list',
+        message: 'Enter what type of team memeber to add:',
+        choices: ['Engineer', 'Intern', 'Done.'],
+        name: 'employeeType'
+    }
+]
 
 // variables for generating card strings
 let managerCard = '';
@@ -110,10 +120,21 @@ async function init() {
     const managerData = await inquirer.prompt(managerQuestions);
 
     //generate the manager card
-    const manager = new Manager(managerData.managerName, managerData.managerID, managerData.managerEmail, managerData.managerOfficeNum);
+    const manager = new Manager(managerData.name, managerData.id, managerData.email, managerData.officeNum);
     managerCard = manager.generateCard();
 
-    console.log(managerCard);
+    let continueAdding = true;
+    while (continueAdding) {
+        let addMemberData = await inquirer.prompt(addQuestion);
+        let memberType = addMemberData.addInput;
+
+        switch (memberType) {
+            case 'Engineer': {
+                let engineerData = await inquirer.prompt(engineerQuestions);
+                let engineer = new Engineer(engineer.)
+            }
+        }
+    }
 }
 
 init();
