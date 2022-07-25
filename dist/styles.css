@@ -1,7 +1,33 @@
+:root {
+    --managerColor: #cdb4db;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 }
 
 #hero {
     text-align: center;
+}
+
+.card {
+    padding: 2%;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.card-header {
+    background-color: var(--managerColor);
+    padding: 5%;
+}
+
+.card-title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+.itemTitle {
+    text-decoration: underline;
 }
