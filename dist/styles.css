@@ -12,6 +12,10 @@ body {
     text-align: center;
 }
 
+.card-body {
+    width: 100%;
+}
+
 .card {
     padding: 2%;
     border: 1px solid black;
@@ -26,21 +30,26 @@ body {
 .card-title {
     text-align: center;
     font-weight: bold;
-    margin-bottom: 2%;
 }
 
 .itemTitle {
     text-decoration: underline;
 }
 
-.manager {
+.managerHeader {
     background-color: var(--managerColor);
 }
 
-.engineer {
+.engineerHeader {
     background-color: var(--engineerColor);
 }
 
-.intern {
+.internHeader {
     background-color: var(--internColor);
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        margin-bottom: 2% !important;
+    }
 }
