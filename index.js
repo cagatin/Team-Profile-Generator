@@ -8,6 +8,10 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
+
+// Import the helper functions
+const { generateManagerCard, generateEngineerCard, generateInternCard } = require('./src/helper');
+
 // Function to prompt manager questions
 function getManagerInfo() {
     inquirer
