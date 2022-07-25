@@ -12,6 +12,37 @@ const Intern = require('./lib/Intern');
 // Import the helper function
 const generateTemplate = require('./src/helper');
 
+
+//Array of Manager questions
+const managerQuestions = [
+    // Name of manager
+    {
+        type: "input",
+        message: "What is the name of the manager?",
+        name: "managerName"
+    },
+    // Employee ID of the manager
+    {
+        type: "input",
+        message: "What is the employee ID of the manager?",
+        name: "managerID"
+    },
+    // Email address of the manager
+    {
+        type: "input",
+        message: "What is manager's Email?",
+        name: "managerEmail"
+    },
+    // Office number of the manager
+    {
+        type: "input",
+        message: "What Office Number is the manager in charge of?",
+        name: "managerOfficeNum"
+    }
+];
+
+//array of 
+
 // Function to prompt manager questions
 function getManagerInfo() {
     inquirer
@@ -45,9 +76,8 @@ function getManagerInfo() {
         )
         // After the user finishes the prompts, create a new Manager Object
         .then(answers => {
-            console.log(answers);
             let manager = new Manager(answers.managerName, answers.managerID, answers.managerEmail, answers.managerOfficeNum);
-            return manager;
+            return manager.generateCard();
         })
         .catch(err => console.log(err));
 }
@@ -132,9 +162,23 @@ function getInternInfo() {
 }
 
 
+// variables for generating card strings
+let managerCard = '';
+let engineerCard = '';
+let internCard = '';
+
 // Init function that begins the prompts
 async function init() {
     console.log("Beginning Team Profile Generator.");
+
+    //prompt user about manager information
+    const managerData = await inquirer.prompt(managerQuestions);
+
+    //generate the manager card
+    const manager = new Manager(managerData.managerName, managerData.managerID, managerData.managerEmail, managerData.managerOfficeNum);
+    managerCard = manager.generateCard();
+
+    console.log(managerCard);
 }
 
 init();
