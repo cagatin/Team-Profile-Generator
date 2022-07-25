@@ -3,8 +3,8 @@
 ## Table of Contents
 [Description](#description) <br />
 [Installation](#installation) <br />
-undefined
-undefined
+[Contribute](#contribute) <br />
+[Test](#test) <br />
 [Questions](#questions) <br />
 <br />
 
@@ -13,7 +13,16 @@ A simple command-line application to display information about employees on a so
 
 ## Installation
 First, in the command line, install the necessary dependencies by running npm install in the root directory. Then, to run the generation process, simply run node index.js to begin. <br/>
-undefinedundefinedundefined
+
+## Usage
+Used to display information about a software engineering team. <br/>
+
+## Contribute
+Fork the repository and submit a pull request. <br/>
+
+## Test
+In the __test__ directory, run npm test to run all the test files. <br/>
+
 ## Questions? 
 Reach me at the following with your questions: <br/>
 Github Username: cagatin <br/>
