@@ -8,7 +8,6 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
-
 // Function to prompt manager questions
 function getManagerInfo() {
     inquirer
@@ -42,7 +41,9 @@ function getManagerInfo() {
         )
         // After the user finishes the prompts, create a new Manager Object
         .then(answers => {
+            console.log(answers);
             let manager = new Manager(answers.managerName, answers.managerID, answers.managerEmail, answers.managerOfficeNum);
+            return manager;
         })
         .catch(err => console.log(err));
 }
@@ -80,7 +81,9 @@ function getEngineerInfo() {
         )
         // After the user finishes the prompts, create a new Engineer Object
         .then(answers => {
+            console.log(answers);
             let engineer = new Engineer(answers.engineerName, answers.engineerID, answers.engineerEmail, answers.engineerGithub);
+            return engineer;
         })
         .catch(err => console.log(err));
 }
@@ -118,7 +121,16 @@ function getInternInfo() {
         )
         // After the user finishes the prompts, create a new Engineer Object
         .then(answers => {
-            let engineer = new Intern(answers.internName, answers.internID, answers.internEmail, answers.internSchool);
+            console.log(answers);
+            let intern = new Intern(answers.internName, answers.internID, answers.internEmail, answers.internSchool);
         })
         .catch(err => console.log(err));
 }
+
+
+// Init function that begins the prompts
+async function init() {
+    console.log("Beginning Team Profile Generator.");
+}
+
+init();

@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/cagatin/Team-Profile-Generator#readme",
   "dependencies": {
-    "inquirer": "^9.0.2",
+    "inquirer": "^6.3.1",
     "jest": "^28.1.3"
   }
 }
