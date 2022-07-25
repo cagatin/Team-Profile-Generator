@@ -131,7 +131,8 @@ async function init() {
         switch (memberType) {
             case 'Engineer': {
                 let engineerData = await inquirer.prompt(engineerQuestions);
-                let engineer = new Engineer(engineer.)
+                let engineer = new Engineer(engineerData.name, engineerData.id, engineerData.email, engineerData.github);
+                let cardString = engineer.generateCard();
             }
         }
     }
