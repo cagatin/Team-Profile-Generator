@@ -84,3 +84,41 @@ function getEngineerInfo() {
         })
         .catch(err => console.log(err));
 }
+
+// Function to prompt Intern Questions
+function getInternInfo() {
+    inquirer
+        .prompt(
+            [
+                // Name of Intern
+                {
+                    type: "input",
+                    message: "What is the name of the Intern?",
+                    name: "internName"
+                },
+                // Employee ID of the Intern
+                {
+                    type: "input",
+                    message: "What is the employee ID of the Intern?",
+                    name: "internID"
+                },
+                // Email address of the Intern
+                {
+                    type: "input",
+                    message: "What is Intern's Email?",
+                    name: "internEmail"
+                },
+                // School of the intern
+                {
+                    type: "input",
+                    message: "What school is the Intern currently attending?",
+                    name: "internSchool"
+                }
+            ]
+        )
+        // After the user finishes the prompts, create a new Engineer Object
+        .then(answers => {
+            let engineer = new Intern(answers.internName, answers.internID, answers.internEmail, answers.internSchool);
+        })
+        .catch(err => console.log(err));
+}
