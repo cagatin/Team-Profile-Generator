@@ -109,3 +109,35 @@ function generateTemplate() {
     </html>
     `
 }
+
+// helper function to generate the Manager card
+function generateManagerCard(manager) {
+    const name = manager.managerName;
+    const id = manager.managerID;
+    const email = manager.managerEmail;
+    const officeNumber = manager.managerOfficeNum;
+
+    let managerCard = `
+    <div class="card" style="width: 20rem;">
+        <div class="card-header managerHeader">
+            <h2 class="card-title">Manager</h2>
+        </div>
+        <div class="card-body">
+            <ul class="list-group card-list">
+                <li class="list-group-item card-list-item"><span class="itemTitle">Name:</span> ${name}
+                </li>
+                <li class="list-group-item card-list-item"><span class="itemTitle">ID Number:</span> ${id}
+                </li>
+                <li class="list-group-item card-list-item"><span class="itemTitle">Email:</span> <a
+                        href="mailto:${email}">${email}</a>
+                </li>
+                <li class="list-group-item card-list-item"><span class="itemTitle">Office Number:</span> ${officeNumber}
+                </li>
+            </ul>
+        </div>
+    </div>
+    `;
+    return managerCard;
+}
+
+// helper function to generate Engineer Card
