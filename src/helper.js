@@ -31,13 +31,10 @@ function generateTemplate(managerCard, engineerCard, internCard) {
             </div>
         </header>
         <main class="contianer-fluid">
-            <div class="container-fluid d-flex flex-column flex-sm-column flex-md-row flex-lg-row align-items-center justify-content-center justify-content-md-around justify-content-lg-around"
+            <div class="container-fluid d-flex flex-column flex-wrap flex-sm-column flex-md-row flex-lg-row align-items-center justify-content-center justify-content-md-around justify-content-lg-around"
                 id="card-container">
-                <!--Manager card-->
                 ${managerCard}
-                <!-- Engineer Card -->
                 ${engineerCard}
-                <!-- Intern Card -->
                 ${internCard}
             </div>
         </main>
