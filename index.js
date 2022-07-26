@@ -102,7 +102,7 @@ const addQuestion = [
     {
         type: 'list',
         message: 'Enter what type of team memeber to add:',
-        choices: ['Engineer', 'Intern', 'Done.'],
+        choices: ['Engineer', 'Intern', 'Done'],
         name: 'employeeType'
     }
 ]
@@ -126,16 +126,35 @@ async function init() {
     let continueAdding = true;
     while (continueAdding) {
         let addMemberData = await inquirer.prompt(addQuestion);
-        let memberType = addMemberData.addInput;
+        let memberType = addMemberData.employeeType;
 
         switch (memberType) {
-            case 'Engineer': {
+            case 'Engineer':
                 let engineerData = await inquirer.prompt(engineerQuestions);
                 let engineer = new Engineer(engineerData.name, engineerData.id, engineerData.email, engineerData.github);
-                let cardString = engineer.generateCard();
-            }
+                let engCardString = engineer.generateCard();
+                engineerCard += engCardString;
+                engineerCard += '\n';
+                break;
+            case 'Intern':
+                let internData = await inquirer.prompt(internQuestions);
+                let intern = new Intern(internData.name, internData.id, internData.email, internData.school);
+                let intCardString = intern.generateCard();
+                internCard += intCardString;
+                internCard += '\n';
+                break;
+            case 'Done':
+                continueAdding = false;
+                break;
         }
     }
+
+    let htmlTemplate = generateTemplate(managerCard, engineerCard, internCard);
+
+    fs.writeFile('./dist/sampleHTML.html', htmlTemplate, (err) => {
+        err ? console.log("err") : console.log("File created!");
+    })
+
 }
 
 init();

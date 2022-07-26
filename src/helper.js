@@ -56,6 +56,7 @@ function generateTemplate(managerCard, engineerCard, internCard) {
     
     </html>
     `
+    return htmlTemplate;
 }
 
 module.exports = generateTemplate;
