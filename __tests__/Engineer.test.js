@@ -67,7 +67,7 @@ describe('Engineer Card Method', () => {
                                     href="mailto:${testEngineer.getEmail()}">${testEngineer.getEmail()}</a>
                             </li>
                             <li class="list-group-item card-list-item"><span class="itemTitle">Github Account:</span> <a
-                                    href="#">${testEngineer.getGithub()}</a>
+                                    href="https://github.com/${testEngineer.getGithub()}">${testEngineer.getGithub()}</a>
                             </li>
                         </ul>
                     </div>
