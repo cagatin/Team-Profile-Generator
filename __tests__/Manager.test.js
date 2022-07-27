@@ -25,7 +25,7 @@ describe('Methods', () => {
     })
     test("getId method", () => {
         const testManager = new Manager('Felix', '12', 'cagatingilbert@gmail.com', '24');
-        const id = testManagr.getId();
+        const id = testManager.getId();
         expect(id).toBe('12');
     })
     test("getEmail method", () => {
