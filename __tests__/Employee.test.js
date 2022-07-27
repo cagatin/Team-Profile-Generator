@@ -28,9 +28,14 @@ describe('Methods', () => {
         const id = testEmployee.getId();
         expect(id).toBe('12');
     })
-    test("Employee email", () => {
+    test("getEmail", () => {
         const testEmployee = new Employee('Felix', '12', 'Cagatingilbert@mail.com');
         const email = testEmployee.getEmail();
         expect(email).toBe('Cagatingilbert@gmail.com');
+    });
+    test("getRole", () => {
+        const testEmployee = new Employee('Felix', '12', 'Cagatingilbert@mail.com');
+        const role = testEmployee.getRole();
+        expect(role).toBe('Employee');
     })
 })
