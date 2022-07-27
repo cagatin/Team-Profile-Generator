@@ -13,7 +13,7 @@ describe('Instantiation', () => {
     })
     test("Manager email", () => {
         const testManager = new Manager('Felix', '12', 'cagatingilbert@gmail.com', '24');
-        const email = testEngineer.email;
+        const email = testManager.email;
         expect(email).toBe('cagatingilbert@gmail.com');
     })
 })
@@ -33,41 +33,40 @@ describe('Methods', () => {
         const email = testManager.getEmail();
         expect(email).toBe('cagatingilbert@gmail.com');
     });
-    test("getGithub method", () => {
+    test("getOfficeNumber method", () => {
         const testManager = new Manager('Felix', '12', 'cagatingilbert@gmail.com', '24');
-        const github = testManager.getGithub();
-        expect(github).toBe('cagatin');
+        const officeNumber = testManager.getOfficeNumber();
+        expect(officeNumber).toBe('24');
     })
     test("getRole", () => {
         const testManager = new Manager('Felix', '12', 'cagatingilbert@gmail.com', '24');
         const role = testManager.getRole();
-        expect(role).toBe('Engineer');
+        expect(role).toBe('Manager');
     });
 })
 describe('Engineer Card Method', () => {
     test("EngineerCard Method", () => {
         const testManager = new Manager('Felix', '12', 'cagatingilbert@gmail.com', '24');
-        let engineerCard = `
-                <div class="card engineerCard" style="width: 20rem;">
-                    <div class="card-header engineerHeader">
-                        <h2 class="card-title">Engineer</h2>
+        let testManagerCard = `
+                <div class="card" style="width: 20rem;">
+                    <div class="card-header managerHeader">
+                        <h2 class="card-title">Manager</h2>
                     </div>
                     <div class="card-body">
                         <ul class="list-group card-list">
-                            <li class="list-group-item card-list-item"><span class="itemTitle">Name:</span> ${testEngineer.getName()}
+                            <li class="list-group-item card-list-item"><span class="itemTitle">Name:</span> ${testManager.getName()}
                             </li>
-                            <li class="list-group-item card-list-item"><span class="itemTitle">ID Number:</span> ${testEngineer.getId()}
+                            <li class="list-group-item card-list-item"><span class="itemTitle">ID Number:</span> ${testManager.getId()}
                             </li>
                             <li class="list-group-item card-list-item"><span class="itemTitle">Email:</span> <a
-                                    href="mailto:${testEngineer.getEmail()}">${testEngineer.getEmail()}</a>
+                                    href="mailto:${testManager.getEmail()}">${testManager.getEmail()}</a>
                             </li>
-                            <li class="list-group-item card-list-item"><span class="itemTitle">Github Account:</span> <a
-                                    href="#">${testEngineer.getGithub()}</a>
+                            <li class="list-group-item card-list-item"><span class="itemTitle">Office Number:</span> ${testManager.getOfficeNumber()}
                             </li>
                         </ul>
                     </div>
                 </div>
         `;
-        expect(testEngineer.generateCard()).toBe(engineerCard);
+        expect(testManager.generateCard()).toBe(testManagerCard);
     });
 })
