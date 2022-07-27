@@ -44,3 +44,30 @@ describe('Methods', () => {
         expect(role).toBe('Engineer');
     });
 })
+describe('Engineer Card Method', () => {
+    test("EngineerCard Method", () => {
+        const testEngineer = new Engineer('Felix', '12', 'cagatingilbert@gmail.com', 'cagatin');
+        let engineerCard = `
+                <div class="card engineerCard" style="width: 20rem;">
+                    <div class="card-header engineerHeader">
+                        <h2 class="card-title">Engineer</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group card-list">
+                            <li class="list-group-item card-list-item"><span class="itemTitle">Name:</span> ${testEngineer.getName()}
+                            </li>
+                            <li class="list-group-item card-list-item"><span class="itemTitle">ID Number:</span> ${testEngineer.getId()}
+                            </li>
+                            <li class="list-group-item card-list-item"><span class="itemTitle">Email:</span> <a
+                                    href="mailto:${testEngineer.getEmail()}">${testEngineer.getEmail()}</a>
+                            </li>
+                            <li class="list-group-item card-list-item"><span class="itemTitle">Github Account:</span> <a
+                                    href="#">${testEngineer.getGithub()}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        `;
+        expect(testEngineer.generateCard()).toBe(engineerCard);
+    });
+})
