@@ -16,6 +16,11 @@ describe('Instantiation', () => {
         const email = testEngineer.email;
         expect(email).toBe('cagatingilbert@gmail.com');
     })
+    test("Engineer github", () => {
+        const testEngineer = new Engineer('Felix', '12', 'cagatingilbert@gmail.com', 'cagatin');
+        const github = testEngineer.github;
+        expect(github).toBe('cagatin');
+    })
 })
 describe('Methods', () => {
     test("getName method", () => {
