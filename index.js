@@ -101,7 +101,7 @@ const internQuestions = [
 const addQuestion = [
     {
         type: 'list',
-        message: 'Enter what type of team memeber to add:',
+        message: 'Enter what type of team member to add:',
         choices: ['Engineer', 'Intern', 'Done'],
         name: 'employeeType'
     }
