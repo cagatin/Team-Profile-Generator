@@ -1,5 +1,8 @@
 # Team Profile Generator
 
+## Demo
+[![](assets/images/Demo.PNG)](https://watch.screencastify.com/v/qmtRWNxCx96z7hVRuTRm) <br/>
+
 ## Table of Contents
 [Description](#description) <br />
 [Installation](#installation) <br />
