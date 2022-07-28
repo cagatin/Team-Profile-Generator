@@ -1,6 +1,6 @@
 # Team Profile Generator
 
-## Demo
+## Click the Image Below for a Comprehensive Demo!
 [![](assets/images/Demo.PNG)](https://watch.screencastify.com/v/qmtRWNxCx96z7hVRuTRm) <br/>
 
 ## Table of Contents
